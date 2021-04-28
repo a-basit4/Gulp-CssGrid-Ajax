@@ -1,0 +1,18 @@
+// Import Third Party modules
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+
+// AOS CSS Library
+@import 'modules/core';
+@import 'modules/easing';
+@import 'modules/animations';
+
+// Animate.CSS
+@import 'animate';
+
+// Import Required modules
+@import 'modules/variable';
+@import 'modules/mixin';
+
+
+@import "modules/custom";

@@ -1,0 +1,127 @@
+body {
+  overflow-x: hidden;
+}
+
+h1{
+  &:before {
+    content: 'basit';
+  }
+  &:after {
+    content: 'test';
+
+  }
+  &::first-letter {
+    color: $red;
+  }
+}
+
+.box1{
+  height: 100px;
+  width: 100px;
+  position: relative;
+  background-color: $red;
+  animation: move 2s;
+  // transition: 5s 2s;
+  // transform : translatex(500px) scale(0.5);
+}
+@keyframes move {
+  from {left: 0px;}
+  to {left:500px;}
+}
+
+// Flex
+
+.flexbox-container {
+  height: 500px;
+  background-color: yellow;
+  display: flex;
+  // flex-direction: column;
+  div {
+    width: 200px;
+    margin: 10px;
+    border:3px solid #333;
+    background-color: #dfdfdf;
+  }
+
+  .flexbox-item1 {
+    min-height: 100px;
+
+}
+
+  .flexbox-item2 {
+    min-height:200px;
+
+  }
+
+  .flexbox-item3 {
+    min-height:300px;
+  }
+}
+
+// AOS
+
+.custom-fade {
+  height: 200px;
+  width: 200px;
+  background-color: $red;
+}
+
+// Animate.css
+
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
+
+// Grid
+
+.grid-container {
+display: grid;
+grid-gap: 20px;
+/*
+grid-template-areas: 
+'header header header'
+'sidebar content content'
+'footer footer footer';
+grid-template-rows: 60px 1fr 100px;
+grid-template-columns:20% 1fr;
+*/
+
+// short hand property
+grid-template:
+'header header header' 40px
+'sidebar content content' 1fr
+'footer footer footer' 100px
+/ 40% 1fr ; // Column values 
+}
+
+.grid-item:nth-child(even) {
+  background-color: blue;
+}
+.grid-item:nth-child(odd) {
+  background-color: green;
+}
+
+.grid-item-1 {
+  grid-area: header;
+}
+.grid-item-2 {
+  grid-area: sidebar;
+}
+.grid-item-3 {
+  grid-area: content;
+}
+.grid-item-5 {
+  grid-area:footer;
+}
+
+// Responsive 
+@media only screen and (max-width:550px) {
+  .grid-container {
+    grid-template:
+    'header' 10vh
+    'sidebar' 20vh
+    'content' 50vh
+    'footer' 20vh
+    / 1fr;
+  }
+}
